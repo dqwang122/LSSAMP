@@ -13,7 +13,7 @@ Some code are borrowed from [OpenNMT](https://opennmt.net/), [VQ-VAE](https://gi
 The file organization is as follows:
 
 ```
-antibody
+LSSAMP
 ├── configs                           # configs
 ├── data                             
 │   └── vocab
