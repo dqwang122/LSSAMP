@@ -1,0 +1,25 @@
+# empty dir
+data/*
+logs/*
+models/*
+raw_data/*
+results/*
+configs/*
+
+# dir
+__pycache__/
+.DS_Store/
+.vscode/
+.idea/
+
+# file
+.pyc
+.pt
+.log
+.txt
+.csv
+.tsv
+
+# keep file
+!data/vocab
+!configs/

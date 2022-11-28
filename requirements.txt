@@ -1,0 +1,8 @@
+OpenNMT-py
+torch==1.9.0
+python-Levenshtein
+modlamp
+seaborn
+cmake==3.17.0
+MulticoreTSNE
+modlamp
