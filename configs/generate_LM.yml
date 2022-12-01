@@ -1,0 +1,24 @@
+mode: test
+visible_gpus: '0'
+task: LM
+data_path: ../logs/lssamp_amp/train/epoch_128_index.0   # change according the best epoch
+model_path: ../models/lssamp_amp_c0
+log_dir: ../logs/lssamp_amp_c0
+data_process: parallel_index
+test_from: ../models/lssamp_amp_c0/model_best.pt
+test_name: train
+result_path: ../logs/lssamp_amp_c0/generate/
+
+vocab_size: 9
+use_enc: false
+sub_book: 4
+max_length: 100
+max_tgt_len: 100
+max_skip_length: 100
+
+step: 1
+batch_size: 1
+test_batch_size: 1
+sample: top
+prefix_token: 10
+block_trigram: True

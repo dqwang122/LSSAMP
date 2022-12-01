@@ -1,0 +1,38 @@
+mode: train
+visible_gpus: '0'
+task: AMP
+arch: cvqvae
+data_path: ../data/uniprot/uniprot_all
+model_path: ../models/lssamp_aa
+log_dir: ../logs/lssamp_aa
+data_process: parallel
+loss_func: vqvae
+
+sub_book: 4
+code_book: 1
+embed_size: 64
+enc_layers: 2
+dec_layers: 2
+enc_ff_size: 512
+# dec_ff_size: 512
+enc_hidden_size: 128
+dec_hidden_size: 128
+latent_size: 128
+max_length: 100
+max_tgt_len: 100
+max_skip_length: 100
+
+decay: 0.8
+ss_coef: 0
+vq_coef: 0
+comit_coef: 0.05
+
+lr: 0.01
+valid_steps: 500
+report_every: 50
+save_checkpoint_steps: 2000
+train_steps: 1000000
+batch_size: 30000
+test_batch_size: 10000
+train_and_valid: True
+seq_reverse: True

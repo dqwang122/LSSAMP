@@ -1,0 +1,28 @@
+mode: train
+visible_gpus: '0'
+task: LM
+data_path: ../logs/lssamp_amp/train/epoch_128_index.0 # change according the best epoch
+model_path: ../models/lssamp_amp_c0
+log_dir: ../logs/lssamp_amp_c0
+data_process: parallel_index
+vocab_size: 9
+
+use_enc: false
+sub_book: 4
+enc_layers: 1
+dec_layers: 1
+enc_ff_size: 256
+enc_hidden_size: 64
+dec_hidden_size: 64
+max_length: 100
+max_tgt_len: 100
+max_skip_length: 100
+
+lr: 0.01
+valid_steps: 200
+report_every: 50
+save_checkpoint_steps: 2000
+train_steps: 1000000
+batch_size: 6000
+test_batch_size: 1000
+train_and_valid: True

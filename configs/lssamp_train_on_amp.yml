@@ -1,0 +1,35 @@
+mode: train
+visible_gpus: '0'
+task: AMP
+arch: cvqvae
+data_path: ../data/APD/APD.ss
+model_path: ../models/lssamp_amp
+log_dir: ../logs/lssamp_amp
+data_process: parallel_ss
+loss_func: cvqvae
+train_from: ../models/lssamp_ss/model_best.pt
+
+max_skip_length: 32
+
+use_enc: False
+ss_size: 8
+sub_book: 4
+code_book: 1
+decay: 0.95
+ss_coef: 3
+vq_coef: 0
+comit_coef: 0.01
+
+optim_init: True
+lr: 0.001
+warmup_steps: 1
+valid_steps: 100
+report_every: 10
+save_checkpoint_steps: 200
+train_steps: 1000000
+batch_size: 5000
+accum_count: 2
+train_and_valid: True
+save_index: True
+seq_reverse: False
+patience: 5

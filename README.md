@@ -89,7 +89,7 @@ And the json-format input will be:
 
 After preprocessing the dataset and putting them under the *data* directory, we can train the model from *run.sh*.
 We provide the HDFS-based training scripts, and you can also delete all HDFS-related commands and just run from local path.
-We use *.yaml* files to organize the parameters and put the examples under *configs* directory. Please double check these options and change as you like.
+We use *.yml* files to organize the parameters and put the examples under *configs* directory. Please double check these options and change as you like.
 
 To start, just use:
 
@@ -109,7 +109,7 @@ We implement several computational metrics in *src/scripts/calProperty.py*. The 
 bash baseline.sh <model-name> <expr-name>
 bash sample.sh <expr-name> <best-epoch> <best-step> <sample-method>
 ```
-Pay attention that we need to predict the secondary structure labels for baseline outputs since they do not provide this information during the generation. For simplicity, we use our best LSSAMP model to predict the secondary structure labels (*configs/predict_ss.yaml*). One can also use Prospr to predict the secondary structure, but remember to prepare MSA (multiple sequence alignment) for each peptide before feeding them into Prospr.
+Pay attention that we need to predict the secondary structure labels for baseline outputs since they do not provide this information during the generation. For simplicity, we use our best LSSAMP model to predict the secondary structure labels (*configs/predict_ss.yml*). One can also use Prospr to predict the secondary structure, but remember to prepare MSA (multiple sequence alignment) for each peptide before feeding them into Prospr.
 
 The public classifiers can be found in:
 * [CAMP3](http://www.camp3.bicnirrh.res.in/prediction.php): RF, DA, SVM

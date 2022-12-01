@@ -1,0 +1,24 @@
+mode: predict
+visible_gpus: '0'
+task: AMP
+arch: cvqvae
+data_path: ../data/APD/APD.ss
+log_dir: ../logs/lssamp_amp
+data_process: parallel
+loss_func: cvqvae
+test_from: ../models/lssamp_amp/model_best.pt
+test_name: ../raw_data/amp.jsonl
+
+
+use_enc: False
+ss_size: 8
+sub_book: 4
+code_book: 1
+decay: 0.95
+ss_coef: 3
+vq_coef: 0
+comit_coef: 0.01
+
+max_length: 400
+max_tgt_len: 400
+batch_size: 5000
